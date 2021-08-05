@@ -13,7 +13,8 @@ import org.springframework.stereotype.Repository;
 import jp.co.sample.domain.Administrator;
 
 /**
- * administratorsテーブル情報を操作するリポジトリ
+ * administratorsテーブル情報を操作するリポジトリ.
+ * 
  * @author hayato.saishu
  *
  */
@@ -34,8 +35,9 @@ public class AdministratorRepository {
 	private NamedParameterJdbcTemplate template;
 	
 	/**
-	 * 管理者情報を挿入します。
-	 * @param administrator ドメイン
+	 * 管理者情報を挿入します.
+	 * 
+	 * @param Administrator 管理者情報 
 	 * 
 	 */
 	public void insert(Administrator administrator) {
@@ -47,11 +49,11 @@ public class AdministratorRepository {
 	}
 	
 	/**
-	 * メールアドレスとパスワードから、管理者情報を取得します。
+	 * メールアドレスとパスワードから、管理者情報を取得します.
 	 * 
 	 * @param mailAddress メールアドレス
 	 * @param password　パスワード
-	 * @return Administrator ドメイン
+	 * @return Administrator 管理者情報
 	 */
 	public Administrator findByMailAddressAndPassword(String mailAddress, String password) {
 		

@@ -3,7 +3,8 @@ package jp.co.sample.domain;
 import java.util.Date;
 
 /**
- * 従業員情報を表すドメイン
+ * 従業員情報を表すドメイン.
+ * 
  * @author hayato.saishu
  *
  */
