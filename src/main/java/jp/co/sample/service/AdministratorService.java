@@ -28,4 +28,18 @@ public class AdministratorService {
 		administratorRepository.insert(administrator);
 	}
 
+	/**
+	 * ログイン処理をする.
+	 * 
+	 * @param mailAddress メールアドレス
+	 * @param password　パスワード　
+	 * @return　管理者情報
+	 */
+	public Administrator login(String mailAddress, String password) {
+//		Administrator administrator  = new Administrator();
+//		administrator = administratorRepository.findByMailAddressAndPassword(mailAddress, password);
+//		return administrator;
+		
+		return administratorRepository.findByMailAddressAndPassword(mailAddress, password);
+	}
 }
