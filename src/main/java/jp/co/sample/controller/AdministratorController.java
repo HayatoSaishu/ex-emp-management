@@ -28,7 +28,7 @@ public class AdministratorController {
 	 * フォームをリクエストスコープに格納.
 	 * 
 	 * @return フォームオブジェクト
-	 */
+	 */	
 	@ModelAttribute
 	public InsertAdministratorForm setUpForm() {
 		return new InsertAdministratorForm();
@@ -48,6 +48,8 @@ public class AdministratorController {
 	 * 管理者情報を登録する画面に遷移.
 	 *
 	 * @return 管理者情報を登録する画面へフォワードする。
+	 * 初期画面へ遷移.
+	 * 
 	 */
 	@RequestMapping("/toInsert")
 	public String toInsert() {
@@ -73,7 +75,5 @@ public class AdministratorController {
 	public String toLogin() {
 		return "administrator/login";
 	}
-	
-	
-	
+
 }
