@@ -13,7 +13,8 @@ import org.springframework.stereotype.Repository;
 import jp.co.sample.domain.Employee;
 
 /**
- * employeesテーブルの情報を操作するリポジトリ
+ * employeesテーブルの情報を操作するリポジトリ.
+ * 
  * @author hayato.saishu
  *
  */
@@ -42,7 +43,8 @@ public class EmployeeRepository {
 	private NamedParameterJdbcTemplate template;
 	
 	/**
-	 * 従業員一覧情報を入社日(降順)で取得します。
+	 * 従業員一覧情報を入社日(降順)で取得します.
+	 * 
 	 * @return 従業員の情報が入ったリスト
 	 */
 	public List<Employee> findAll(){
@@ -56,8 +58,8 @@ public class EmployeeRepository {
 	
 	/**
 	 * 従業員IDから、1件の従業員情報を取得します。
-	 * @param id
-	 * @return Employee ドメイン
+	 * @param ID
+	 * @return Employee 従業員情報
 	 */
 	public Employee load(Integer id) {
 		
@@ -71,13 +73,14 @@ public class EmployeeRepository {
 	}
 	
 	/**
-	 * 従業員情報を変更します。
-	 * @param employee
+	 * 従業員情報を変更します.
+	 * 
+	 * @param Employee 従業員情報
 	 */
 	public void update(Employee employee) {
 		SqlParameterSource param = new BeanPropertySqlParameterSource(employee);
 		
-		String sql = "UPDATE employees SET id=:id, name=:name, image=:image, gender=:gender, hire_date=:hireDate, mail_address=:mailAddress, zip_code=:zipCode, address=:address, telephone=:telephone, salary=:salary, characterictics=:characterictics, dependents_count=:dependentsCount; WHERE id=;id";
+		String sql = "UPDATE employees SET name=:name, image=:image, gender=:gender, hire_date=:hireDate, mail_address=:mailAddress, zip_code=:zipCode, address=:address, telephone=:telephone, salary=:salary, characterictics=:characterictics, dependents_count=:dependentsCount; WHERE id=;id";
 		
 		template.update(sql, param);
 	}
