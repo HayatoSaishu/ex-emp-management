@@ -17,6 +17,14 @@ public class UpdateEmployeeForm {
 	 */
 	private String dependentsCount;
 	
+	public Integer getIntegerId() {
+		return Integer.parseInt(id);
+	}
+	
+	public Integer getIntegerDependentsCount() {
+		return Integer.parseInt(dependentsCount);
+	}
+	
 	public String getId() {
 		return id;
 	}
