@@ -57,13 +57,14 @@ public class EmployeeRepository {
 	}
 	
 	/**
-	 * 従業員IDから、1件の従業員情報を取得します。
+	 * 従業員IDから、1件の従業員情報を取得します.
+	 * 
 	 * @param ID
 	 * @return Employee 従業員情報
 	 */
 	public Employee load(Integer id) {
 		
-		String sql = "SELECT id, name, image, gender, hire_date, mail_address, zip_code, address, telephone, salary, characterictics, dependents_count FROM employees WHERE id=:id;";
+		String sql = "SELECT id, name, image, gender, hire_date, mail_address, zip_code, address, telephone, salary, characteristics, dependents_count FROM employees WHERE id=:id;";
 		
 		SqlParameterSource param = new MapSqlParameterSource().addValue("id", id);
 		

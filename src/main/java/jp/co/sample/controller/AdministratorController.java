@@ -54,7 +54,7 @@ public class AdministratorController {
 	 * 管理者情報を登録する画面に遷移.
 	 *
 	 * @return 管理者情報を登録する画面へフォワードする。
-	 * 初期画面へ遷移.
+	 * 初期画面へ遷移
 	 * 
 	 */
 	@RequestMapping("/toInsert")
@@ -77,6 +77,11 @@ public class AdministratorController {
 		return "redirect:/";
 	}
 	
+	/**
+	 * ログイン画面に遷移.
+	 * 
+	 * @return ログイン画面にフォワードする
+	 */
 	@RequestMapping("/")
 	public String toLogin() {
 		return "administrator/login";
@@ -95,10 +100,9 @@ public class AdministratorController {
 		if(administrator == null) {
 			model.addAttribute("errorMessage", "メールアドレスまたはパスワードが不正です");
 			return "administrator/login";
-		} else {
-			session.setAttribute("administratorName", administrator.getName());
-			return "forward:/employee/showList";
-		}
+		} 
+		session.setAttribute("administratorName", administrator.getName());
+			return "forward:/employee/showList";	
 	}
 
 }

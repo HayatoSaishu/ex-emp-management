@@ -22,7 +22,22 @@ public class EmployeeService {
 	@Autowired
 	private EmployeeRepository employeeRepository;
 	
+	/**
+	 * 従業員情報を全件取得する.
+	 * 
+	 * @return 従業員情報のリスト
+	 */
 	public List<Employee> showList(){
 		return employeeRepository.findAll();
+	}
+	
+	/**
+	 * 従業員情報を１件取得する.
+	 * 
+	 * @param 従業員ID
+	 * @return 従業員情報
+	 */
+	public Employee showDetail(Integer id) {
+		return employeeRepository.load(id);
 	}
 }
